@@ -4,7 +4,7 @@ import time
 
 cap = cv2.VideoCapture(0)
 cap.set(3,300)
-cap.set(4,320)
+cap.set(4,300)
 while(1):
 
     # Take each frame
@@ -22,7 +22,17 @@ while(1):
 
     # Bitwise-AND mask and original image
     res = cv2.bitwise_and(frame,frame, mask= mask)
-    cv2.rectangle(frame,(30,30),(100,100),(0,100,100),3)
+
+    #draw grid for basic rubix layout
+    #the output image has a size of w=176 and h=144
+    
+    cv2.line(frame,(58,0),(58,144),(0,255,255),4,8,0)
+    cv2.line(frame,(117,0),(117,144),(0,255,255),4,8,0)
+    cv2.line(frame,(0,48),(176,48),(0,255,255),4,8,0)
+    cv2.line(frame,(0,96),(176,96),(0,255,255),4,8,0)
+  
+
+
     cv2.imshow('frame',frame)
     cv2.imshow('mask',mask)
     cv2.imshow('res',res)
