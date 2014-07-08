@@ -5,12 +5,13 @@ import time
 
 cap = cv2.VideoCapture(0)
 #override input resolution here
-cap.set(3,240) #width
-cap.set(4,160) #height
+cap.set(3,240) #height?
+cap.set(4,160) #width?
 
 #get stream size and other info
 print "INPUT VIDEO WIDTH:",cap.get(3)
 print "INPUT VIDEO HEIGHT:",cap.get(4)
+
 input_width = cap.get(3)
 input_height = cap.get(4)
 
